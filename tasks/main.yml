@@ -1,0 +1,4 @@
+---
+- name: "Running Jenkins Agent role for {{ ansible_os_family|lower() }}"
+  include: "{{ ansible_os_family|lower() }}.yml"
+
