@@ -29,7 +29,9 @@
     owner: jenkins
     group: jenkins
   become: true
-  notify: Reload SystemD
+  notify:
+    - Reload SystemD
+    - Restart Swarm Client service
   register: swarm_jar
 
 - name: Create the Jenkins Swarm Client config directory
@@ -50,5 +52,7 @@
     mode: 0755
   tags:
     - configuration
-  notify: Reload SystemD
+  notify:
+    - Reload SystemD
+    - Restart Swarm Client service
   become: true
