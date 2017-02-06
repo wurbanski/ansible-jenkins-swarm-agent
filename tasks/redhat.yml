@@ -12,7 +12,9 @@
     src: swarmclient
     dest: /etc/init.d/swarmclient
     mode: 0755
-  notify: Reload SystemD
+  notify:
+    - Reload Systemd
+    - Restart Swarm Client service
   become: true
 
 - name: Create Swarm directory
@@ -30,7 +32,6 @@
     group: jenkins
   become: true
   notify:
-    - Reload SystemD
     - Restart Swarm Client service
   register: swarm_jar
 
@@ -53,6 +54,5 @@
   tags:
     - configuration
   notify:
-    - Reload SystemD
     - Restart Swarm Client service
   become: true
