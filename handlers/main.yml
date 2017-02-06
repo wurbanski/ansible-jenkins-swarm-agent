@@ -1,8 +1,12 @@
 ---
 # handlers file for jenkins-agent
-- name: Reload SystemD
-  command: systemctl daemon-reload
-  notify: Restart Swarm Client service
+- name: Reload Systemd
+  systemd:
+    daemon_reload: yes
+    name: swarmclient
+    enabled: yes
+    state: started
+  when: ansible_service_mgr == "systemd"
   become: true
 
 - name: Restart Swarm Client service
