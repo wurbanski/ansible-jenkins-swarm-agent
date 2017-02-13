@@ -1,0 +1,4 @@
+---
+- hosts: all
+  roles:
+    - ../reynn.jenkins-agent

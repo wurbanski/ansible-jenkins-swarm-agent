@@ -26,8 +26,6 @@
   tags:
     - config
 
-- debug: var="swarm_jar"
-
 - name: "Ensure folders folder exists"
   file:
     path: "{{ item }}"
