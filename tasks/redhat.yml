@@ -10,7 +10,7 @@
 - name: Copy the Swarm startup script into init.d
   copy:
     src: swarmclient
-    dest: /etc/init.d/swarmclient
+    dest: "/etc/init.d/{{ jenkins_swarm_service_name }}"
     mode: 0755
   notify:
     - Reload Systemd

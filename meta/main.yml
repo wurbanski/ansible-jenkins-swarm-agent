@@ -1,6 +1,10 @@
+---
+dependencies:
+  - geerlingguy.java
+
 galaxy_info:
-  author: Christopher O'Brian
+  author: Nic Patterson & Chris O'Brian
   description: Provision a Jenkins agent
   company: Concur
   license: BSD
-  min_ansible_version: 2.0
+  min_ansible_version: 2.2

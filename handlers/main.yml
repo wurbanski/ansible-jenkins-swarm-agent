@@ -3,7 +3,7 @@
 - name: Reload Systemd
   systemd:
     daemon_reload: yes
-    name: swarmclient
+    name: "{{ jenkins_swarm_service_name }}"
     enabled: yes
     state: started
   when: ansible_service_mgr == "systemd"
@@ -11,7 +11,7 @@
 
 - name: Restart Swarm Client service
   service:
-    name: swarmclient
+    name: "{{ jenkins_swarm_service_name }}"
     enabled: yes
     state: restarted
   become: true
