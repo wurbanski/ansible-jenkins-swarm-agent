@@ -29,7 +29,7 @@ Role Variables
 | jenkins_swarm_client_jar                | swarm-client-{{ jenkins_swarm_client_version }}.jar | The file name for the swarm client jar |
 | jenkins_swarm_download_url              | {{ jenkins_plugins_url }}/{{ jenkins_plugins_repo_path }}/{{ jenkins_swarm_client_jar }} | Full URL to the Swarm client jar |
 | jenkins_swarm_path                      | /var/lib/jenkins | Path to the swarm client jar file |
-| jenkins_swarm_config_path               | /etc/jenkins | |
+| jenkins_swarm_config_path               | /etc/jenkins | For CentOS while it is using the init.d setup, this is where the swarm-client settings are stored |
 | jenkins_swarm_task_name                 | Jenkins Swarm Client | Description for systemd |
 | jenkins_swarm_systemd_path              | /lib/systemd/system | Path to systemd folder |
 | jenkins_swarm_service_name              | swarm-client | Name of the systemd service |
