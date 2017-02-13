@@ -15,12 +15,13 @@ galaxy_info:
       - 7
     - name: Debian
       versions:
-      - all
+      - jessie
+      - wheezy
     - name: Ubuntu
       versions:
-      - all
+      - xenial
+      - yakkety
   galaxy_tags:
     - development
     - system
     - jenkins
-    - CI-CD
