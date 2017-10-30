@@ -18,6 +18,9 @@ galaxy_info:
       versions:
       - xenial
       - yakkety
+    - name: Windows
+      versions: 
+      - Server 2016
   galaxy_tags:
     - development
     - system
