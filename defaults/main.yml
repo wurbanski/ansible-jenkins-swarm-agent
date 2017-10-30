@@ -13,7 +13,7 @@ jenkins_agent_additional_args:
   - "-disableClientsUniqueId"
 
 # Swarm client url building
-jenkins_swarm_client_version: 3.3
+jenkins_swarm_client_version: 3.6
 jenkins_plugins_url: https://repo.jenkins-ci.org
 jenkins_plugins_repo_path: "releases/org/jenkins-ci/plugins/swarm-client/{{ jenkins_swarm_client_version }}"
 jenkins_swarm_client_jar: "swarm-client-{{ jenkins_swarm_client_version }}.jar"
@@ -27,8 +27,8 @@ jenkins_swarm_systemd_path: /lib/systemd/system
 jenkins_swarm_service_name: swarm-client
 
 # Windows Vars
-jenkins_swarm_client_wrapper_version: 2.0.3-pre
-jenkins_swarm_wrapper_download_url: "{{ jenkins_plugins_url }}/kohsuke/winsw/{{ jenkins_swarm_client_wrapper_version }}/WinSW.exe"
+jenkins_swarm_client_wrapper_version: 2.0.3
+jenkins_swarm_wrapper_download_url: "{{ jenkins_plugins_url}}/releases/com/sun/winsw/winsw/{{ jenkins_swarm_client_wrapper_version }}/winsw-{{jenkins_swarm_client_wrapper_version}}-bin.exe"
 win_base_jenkins_path: "C:\\jenkins"
 win_swarm_client_jar_path: "{{ win_base_jenkins_path }}\\{{ jenkins_swarm_client_jar }}"
 win_swarm_client_wrapper_path: "{{ win_base_jenkins_path }}\\{{ jenkins_swarm_client_jar|replace('.jar', '.exe') }}"
