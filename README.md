@@ -1,6 +1,8 @@
 Jenkins Agent
 =============
 
+[![Build Status](https://travis-ci.org/wurbanski/ansible-jenkins-swarm-agent.svg?branch=master)](https://travis-ci.org/wurbanski/ansible-jenkins-swarm-agent)
+
 This role sets up a Jenkins agent with the Swarm client on a Windows/Ubuntu/CentOS machine.
 
 Requirements
