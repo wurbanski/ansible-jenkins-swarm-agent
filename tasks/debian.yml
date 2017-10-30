@@ -49,6 +49,11 @@
   tags:
     - config
 
+- name: Install default-jre from repository
+  apt:
+    name: default-jre
+    state: present
+
 - name: Create the Swarm Client service def
   template:
     src: swarm-client.service.j2

@@ -1,7 +1,4 @@
 ---
-dependencies:
-  - geerlingguy.java
-
 galaxy_info:
   author: Nic Patterson & Chris O'Brian
   description: Provision a Jenkins agent

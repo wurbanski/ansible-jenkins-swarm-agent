@@ -1,4 +1,11 @@
 ---
+- name: Install javaruntime with chocolatey
+  win_chocolatey:
+    name: javaruntime
+    version: "{{ win_java_version}}"
+    state: present
+  ignore_errors: yes
+
 - name: Create Swarm directory
   win_file:
     path: "{{ win_base_jenkins_path }}"

@@ -44,6 +44,11 @@
     - configuration
   become: true
 
+- name: Install jre 8 from repository
+  yum:
+    name: java-1.8.0-openjdk
+    state: present 
+
 - name: Create the Jenkins Swarm Client config file
   template:
     src: swarm-client-linux.j2
