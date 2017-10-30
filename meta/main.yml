@@ -1,8 +1,7 @@
 ---
 galaxy_info:
-  author: Nic Patterson & Chris O'Brian
-  description: Provision a Jenkins agent
-  company: Concur
+  author: Nic Patterson & Chris O'Brian & Wojciech Urbański
+  description: Provision a Jenkins Swarm agent
   license: BSD
   min_ansible_version: 2.2
   platforms:
