@@ -1,9 +1,8 @@
 ---
-- name: Add a jenkins user and add it to the docker group
+- name: Add a jenkins user
   user:
     name: jenkins
-    groups: docker
-    append: yes
+    group: jenkins
     state: present
   become: true
 
