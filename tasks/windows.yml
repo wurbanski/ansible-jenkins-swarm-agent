@@ -1,8 +1,9 @@
 ---
 - name: Install javaruntime with chocolatey
   win_chocolatey:
-    name: javaruntime
+    name: jre8
     version: "{{ win_java_version}}"
+    params: "/exclude:32"
     state: present
   ignore_errors: yes
 
