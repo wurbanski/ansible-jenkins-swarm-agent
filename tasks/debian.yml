@@ -1,4 +1,10 @@
 ---
+- name: Add a jenkins group
+  group:
+    name: jenkins
+    state: present
+  become: true
+
 - name: Add a jenkins user
   user:
     name: jenkins
