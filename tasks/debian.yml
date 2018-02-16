@@ -43,7 +43,7 @@
   tags:
     - config
 
-- name: "Ensure {{ jenkins_agent_labels_file }} folder exists"
+- name: "Ensure {{ jenkins_agent_labels_file }} file exists"
   file:
     path: "{{ jenkins_agent_labels_file }}"
     state: touch
@@ -54,10 +54,23 @@
   tags:
     - config
 
+- name: Ensure {{ jenkins_agent_labels_file }} contains defined labels
+  lineinfile:
+    path: "{{ jenkins_agent_labels_file }}"
+    line: "{{ jenkins_agent_labels }}"
+  become: true
+  when: 
+    - jenkins_agent_labels_file is defined
+    - jenkins_agent_labels is defined
+  notify: Restart Swarm Client service
+  tags:
+    - config
+
 - name: Install default-jre from repository
   apt:
     name: default-jre
     state: present
+  become: true
 
 - name: Create the Swarm Client service def
   template:
