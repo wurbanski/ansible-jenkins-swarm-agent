@@ -11,9 +11,6 @@ ExecStart=/usr/bin/java \
 {% if jenkins_agent_jvm_args is defined %}
   {{ jenkins_agent_jvm_args|join(' ') }} \
 {% endif %}
-{% if jenkins_agent_log_file is defined %}
-  -logFile {{ jenkins_agent_log_file }} \
-{% endif %}
   -jar {{ swarm_jar.dest }} \
   -master 'http://{{ jenkins_agent_master }}:{{ jenkins_agent_master_port }}' \
 {% if jenkins_agent_username is defined %}
@@ -30,7 +27,7 @@ ExecStart=/usr/bin/java \
 {% endif %}
 {% if jenkins_agent_additional_args is defined %}
 {% for arg in jenkins_agent_additional_args %}
-  -{{ arg }} \
+  {{ arg }} \
 {% endfor %}
 {% endif %}
   -executors '{{ jenkins_agent_num_executors }}'
