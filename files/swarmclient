@@ -38,6 +38,9 @@ MASTER=${MASTER:="jenkins"}
 # The port that the master is running Jenkins on
 MASTER_PORT=${MASTER_PORT:="80"}
 
+# The protocol that the master is running Jenkins with
+MASTER_PROTOCOL=${MASTER_PROTOCOL:="http"}
+
 # The username to use when connecting to the master
 USERNAME=${SWARM_USERNAME:=""}
 
@@ -85,7 +88,7 @@ start() {
 
   cmd="${cmd} java ${JVM_ARGS} "
   cmd="${cmd} -jar '${JAR}'"
-  cmd="${cmd} -master 'http://${MASTER}:${MASTER_PORT}'"
+  cmd="${cmd} -master '${MASTER_PROTOCOL}://${MASTER}:${MASTER_PORT}'"
 
   if [[ -n "${USERNAME}" ]]; then
     cmd="${cmd} -username '${USERNAME}'"

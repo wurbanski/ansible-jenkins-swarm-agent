@@ -12,7 +12,7 @@ ExecStart=/usr/bin/java \
   {{ jenkins_agent_jvm_args|join(' ') }} \
 {% endif %}
   -jar {{ swarm_jar.dest }} \
-  -master 'http://{{ jenkins_agent_master }}:{{ jenkins_agent_master_port }}' \
+  -master '{{ jenkins_agent_master_protocol }}://{{ jenkins_agent_master }}:{{ jenkins_agent_master_port }}' \
 {% if jenkins_agent_username is defined %}
   -username '{{ jenkins_agent_username }}' \
 {% endif %}
