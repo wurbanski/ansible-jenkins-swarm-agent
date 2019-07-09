@@ -1,6 +1,7 @@
 ---
 # Swarm config vars
 jenkins_agent_master_port: 8080
+jenkins_agent_master_protocol: http
 jenkins_agent_username: sa_swarm_agent
 jenkins_agent_password: "{{ lookup('password', '../credentials/{{ inventory_hostname }}/jenkins-agent/agent-password.txt') }}"
 jenkins_agent_name: "{{ inventory_hostname }}"
